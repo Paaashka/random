@@ -361,7 +361,7 @@ th {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 body {
-  font: 15px "Open Sans Regular", Arial normal;
+  font: 15px "Open Sans", Arial normal;
 }
 a {
   color: #000;
@@ -387,7 +387,8 @@ article {
 }
 article h1,
 article div.result {
-  font: 24px "Open Sans Light", Arial normal;
+  font: 24px "Open Sans", Arial normal;
+  font-weight: 300;
   position: relative;
 }
 article h1:before,
@@ -406,7 +407,8 @@ article h1:before {
 article div.result {
   margin: 57px 0 0 -2px;
   padding-right: 25px;
-  font: 36px "Open Sans Light", Arial normal;
+  font: 36px "Open Sans", Arial normal;
+  font-weight: 300;
   line-height: 50px;
 }
 article div.result:before {
