@@ -14,7 +14,7 @@ if ($_POST['text'] && $_POST['submited']) {
     }
 }
 $variables = Array(
-    'Можешь поиграть',
+    /*'Можешь поиграть',
     'Посмотри <a href="http://www.kinopoisk.ru/view_random_film.php">фильм</a>',
     'Заработай денег',
     'Залипни на <a href="http://pikabu.ru">Пикабу</a>',
@@ -49,10 +49,10 @@ $variables = Array(
     'Помоги кому-нибудь',
     'Начни делать ремонт',
     'Займись благотворительностью',
-    'Выберись на природу',
+    'Выберись на природу',*/
     'Изучи <a href="http://htmlacademy.ru/">HTML</a>',
-    'Изучи <a href="http://www.codecademy.com/tracks/python">Питон</a>',
-    'Изучи <a href="http://www.codecademy.com/tracks/javascript">JavaScript</a>',
+    /*'Изучи <a href="http://www.codecademy.com/tracks/python">Питон</a>',
+    'Изучи <a href="http://www.codecademy.com/tracks/javascript">JavaScript</a>',*/
 );
 
 $what = $variables[array_rand($variables)];
