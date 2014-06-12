@@ -1,18 +1,58 @@
 <?php
-$random = mt_rand(0,7);
-switch ($random) {
-	case 0: $what = 'Можешь поиграть.';break;
-	case 1: $what = 'Посмотри фильм.';break;
-	case 2: $what = 'Заработай денег.';break;
-	case 3: $what = 'Залипни в <a href="http://pikabu.ru">Пикабу</a>';break;
-	case 4: $what = 'Прочти книгу.';break;
-	case 5: $what = 'Изучи что-нибудь новое.';break;
-	case 6: $what = 'Разгреби завалы на учобе\работе.';break;
-	case 7: $what = 'Выйди на улицу.';break;
-	#case : $what = '';break;
-	default: $what = 'Займись собой.'; break;
+if($_POST['text'] && $_POST['submited']){
+	$mysqli = new mysqli('localhost', 'cathar_bitrix', 'rTnU90op.', 'cathar_bitrix');
+	if ($mysqli->connect_error) {
+	    die('Connect Error (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
+	}
+	$ip = $mysqli->real_escape_string($_SERVER['REMOTE_ADDR']);
+	$text = $mysqli->real_escape_string($_POST['text']);
+	$mysqli->query("INSERT INTO `cathar_bitrix`.`variables` (`id` ,`text` ,`data` ,`ip`)VALUES (NULL , '$text',CURRENT_TIMESTAMP , '$ip')");
+	if ($mysqli->errno) {
+		die('Select Error (' . $mysqli->errno . ') ' . $mysqli->error);
+	}	
 }
-
+$variables = Array(
+	'Можешь поиграть',
+	'Посмотри фильм',
+	'Заработай денег',
+	'Залипни в <a href="http://pikabu.ru">Пикабу</a>',
+	'Прочти книгу',
+	'Изучи что-нибудь новое',
+	'Разгреби завалы на учобе\работе',
+	'Выйди на улицу',
+	'Займись собой',
+	'Позвони другу\подруге',
+	'Покатайся на велосипеде',
+	'Займись сексом',
+	'Сходи в бар\ресторан\кафе',
+	'Займись шоппингом',
+	'Послушай музыку',
+	'Прибирись',
+	'Ложись спать',
+	'Приготовь покушать',
+	'Сходи в гости',
+	'Прыгни с парашюта',
+	'Выпей чаю\кофе',
+	'Сходи в бильярд',
+	'Сходи в бассейн',
+	'Сходи в боулинг',
+	'Нарисуй картину',
+	'Займись оригами',
+	'Познакомься с кем-нибудь',
+	'Начни учить иностранный язык',
+	'Сделать комплимент первой встреченной девушке',
+	'Признайся в любви',
+	'Добавь сайт в закладки',
+	'Помоги кому-нибудь',
+	'Начни делать ремонт',
+	'Займись благотворительностью',
+	'Выберись на природу'
+);
+$key = array_rand($variables);
+$what = $variables[$key];
+if($key==1){
+	$what.='<br /><a href="http://www.kinopoisk.ru/view_random_film.php">Выбрать можно тут.</a>';
+}
 ?>
 <html>
 	<head>
@@ -63,5 +103,10 @@ switch ($random) {
 				<div class="yashare-auto-init" data-yashareL10n="ru" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir" data-yashareTheme="counter" ></div> 
 			</div>
 		</div>
+		<form method="post">
+			<input type="hidden" name="submited" value="1">
+			<input type="text" name="text">
+			<input type="submit" value="send">
+		</form>
 	</body>
 </html>
