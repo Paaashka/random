@@ -70,7 +70,7 @@ if ($key == 1) {
           type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
-    <!--<link rel="shortcut icon" href="favicon.ico">-->
+    <link rel="shortcut icon" href="favicon.ico">
     <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
     <script type="text/javascript">
         function toggleForm() {
