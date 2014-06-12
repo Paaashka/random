@@ -405,11 +405,19 @@ article h1:before {
 }
 article div.result {
   margin: 57px 0 0 -2px;
+  padding-right: 25px;
   font: 36px "Open Sans Light", Arial normal;
   line-height: 50px;
 }
 article div.result:before {
   line-height: 48px;
+}
+article div.result a {
+  text-decoration: none;
+  border-bottom: 1px solid;
+}
+article div.result a:hover {
+  border-bottom: none;
 }
 article div.moaaar {
   font-size: 16px;
