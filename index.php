@@ -15,13 +15,13 @@ if ($_POST['text'] && $_POST['submited']) {
 }
 $variables = Array(
     'Можешь поиграть',
-    'Посмотри фильм',
+    'Посмотри <a href="http://www.kinopoisk.ru/view_random_film.php">фильм</a>',
     'Заработай денег',
     'Залипни на <a href="http://pikabu.ru">Пикабу</a>',
     'Залипни на <a href="http://habrahabr.ru">Хабре</a>',
     'Прочти книгу',
     'Изучи что-нибудь новое',
-    'Разгреби завалы на учобе/работе',
+    'Разгреби завалы на учёбе/работе',
     'Выйди на улицу',
     'Займись собой',
     'Позвони другу/подруге',
@@ -30,7 +30,7 @@ $variables = Array(
     'Сходи в бар/ресторан/кафе',
     'Займись шоппингом',
     'Послушай музыку',
-    'Прибирись',
+    'Приберись',
     'Ложись спать',
     'Приготовь покушать',
     'Сходи в гости',
@@ -49,13 +49,13 @@ $variables = Array(
     'Помоги кому-нибудь',
     'Начни делать ремонт',
     'Займись благотворительностью',
-    'Выберись на природу'
+    'Выберись на природу',
+    'Изучи <a href="http://htmlacademy.ru/">HTML</a>',
+    'Изучи <a href="http://www.codecademy.com/tracks/python">Питон</a>',
+    'Изучи <a href="http://www.codecademy.com/tracks/javascript">JavaScript</a>',
 );
-$key = array_rand($variables);
-$what = $variables[$key];
-if ($key == 1) {
-    $what .= '<br /><a href="http://www.kinopoisk.ru/view_random_film.php">Выбрать можно тут.</a>';
-}
+
+$what = $variables[array_rand($variables)];
 ?>
 <!DOCTYPE html>
 <html>
@@ -115,5 +115,31 @@ if ($key == 1) {
     <div style="clear: both;"></div>
     <footer>Сделали <a href="http://cathar.ru">Алёшка</a> и <a href="http://paaashka.ru">Пашка</a>.</footer>
 </div>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter25254488 = new Ya.Metrika({id:25254488,
+                    clickmap:true,
+                    trackLinks:true});
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/25254488" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </body>
 </html>
