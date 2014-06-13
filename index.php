@@ -55,7 +55,7 @@ if((int)$_GET['id']){
 
         <div class="result"><?= $what ?></div>
         <div class="moaaar">
-            <a href="./">ещё вариант?</a><br/>
+            <a href="/random/">ещё вариант?</a><br/>
             <a href="#" class="pseudo" onclick="toggleForm();return false;">предложи свой</a>
 
             <form method="post" id="sendYourMama" class="sendForm" style="display: none;">
