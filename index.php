@@ -14,15 +14,15 @@ if ($_POST['text'] && $_POST['submited']) {
     }
 }
 require_once('variables.php');
-if((int)$_GET['id']){
-    if(isset($variables[(int)$_GET['id']])){
+if ((int)$_GET['id']) {
+    if (isset($variables[(int)$_GET['id']])) {
         $what = $variables[(int)$_GET['id']];
-    }else{
-        header("Location: http://cathar.ru/random/".array_rand($variables)."/");
+    } else {
+        header("Location: http://cathar.ru/random/" . array_rand($variables) . "/");
         exit;
     }
-}else{
-    header("Location: http://cathar.ru/random/".array_rand($variables)."/");
+} else {
+    header("Location: http://cathar.ru/random/" . array_rand($variables) . "/");
     exit;
 }
 ?>
@@ -77,7 +77,7 @@ if((int)$_GET['id']){
         <div class="share">
             <div class="share__title">поделись с миром:</div>
             <div class="yashare-auto-init share__buttons" data-yashareL10n="ru"
-                 data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir"
+                 data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir"
                  data-yashareTheme="counter" data-yashareLink="http://cathar.ru/random/"></div>
         </div>
     </aside>
@@ -88,27 +88,36 @@ if((int)$_GET['id']){
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
+        (w[c] = w[c] || []).push(function () {
             try {
-                w.yaCounter25254488 = new Ya.Metrika({id:25254488,
-                    clickmap:true,
-                    trackLinks:true});
-            } catch(e) { }
+                w.yaCounter25254488 = new Ya.Metrika({
+                    id: 25254488,
+                    clickmap: true,
+                    trackLinks: true
+                });
+            } catch (e) {
+            }
         });
 
         var n = d.getElementsByTagName("script")[0],
             s = d.createElement("script"),
-            f = function () { n.parentNode.insertBefore(s, n); };
+            f = function () {
+                n.parentNode.insertBefore(s, n);
+            };
         s.type = "text/javascript";
         s.async = true;
         s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
 
         if (w.opera == "[object Opera]") {
             d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
+        } else {
+            f();
+        }
     })(document, window, "yandex_metrika_callbacks");
 </script>
-<noscript><div><img src="//mc.yandex.ru/watch/25254488" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<noscript>
+    <div><img src="//mc.yandex.ru/watch/25254488" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript>
 <!-- /Yandex.Metrika counter -->
 </body>
 </html>
