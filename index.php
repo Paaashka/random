@@ -14,8 +14,15 @@ if ($_POST['text'] && $_POST['submited']) {
     }
 }
 require_once('variables.php');
-
-$what = $variables[array_rand($variables)];
+if((int)$_GET['id']){
+    if(isset($variables[(int)$_GET['id']])){
+        $what = $variables[(int)$_GET['id']];
+    }else{
+        $what = $variables[array_rand($variables)];        
+    }
+}else{
+    $what = $variables[array_rand($variables)];
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -28,7 +35,7 @@ $what = $variables[array_rand($variables)];
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=latin,cyrillic' rel='stylesheet'
           type='text/css'>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/random/css/style.css"/>
 
     <link rel="shortcut icon" href="favicon.ico">
     <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
