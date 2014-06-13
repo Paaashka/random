@@ -78,7 +78,7 @@ if((int)$_GET['id']){
             <div class="share__title">поделись с миром:</div>
             <div class="yashare-auto-init share__buttons" data-yashareL10n="ru"
                  data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir"
-                 data-yashareTheme="counter"></div>
+                 data-yashareTheme="counter" data-yashareLink="http://cathar.ru/random/"></div>
         </div>
     </aside>
     <div style="clear: both;"></div>
