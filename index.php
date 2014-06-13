@@ -18,10 +18,12 @@ if((int)$_GET['id']){
     if(isset($variables[(int)$_GET['id']])){
         $what = $variables[(int)$_GET['id']];
     }else{
-        $what = $variables[array_rand($variables)];        
+        header("Location: http://cathar.ru/random/".array_rand($variables)."/");
+        exit;
     }
 }else{
-    $what = $variables[array_rand($variables)];
+    header("Location: http://cathar.ru/random/".array_rand($variables)."/");
+    exit;
 }
 ?>
 <!DOCTYPE html>
