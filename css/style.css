@@ -459,6 +459,9 @@ aside div.share__title {
 aside div.share__buttons {
   margin-left: -2px;
 }
+aside div.share .b-share_theme_counter .b-share-btn__wrap {
+  margin: 0 5px 5px 0;
+}
 footer {
   text-align: right;
   margin-top: 85px;
